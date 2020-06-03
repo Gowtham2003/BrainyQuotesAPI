@@ -13,19 +13,38 @@ def getQuotes(query):
     BASE_URL = "https://www.brainyquote.com/"
 
     url = f"https://www.brainyquote.com/topics/{query}-quotes"
+    
+    try:
+        soup = bs(requests.get(url).content,"lxml")
+    except:
+        quotesDictionary["success"] = False
+        return quotesDictionary
 
-    r = requests.get(url)
-
-    soup = bs(r.content,"lxml")
+    
     divs = soup.findAll("div",{"class":"qll-bg"})
 
     for div in divs:
-        quote = div.find("a",{"title":"view quote"}).text
-        quotelink =  BASE_URL + div.find("a",{"title":"view quote"}).get("href")
-        author =  "By " + div.find("a",{"title":"view author"}).text
-        authorlink =  BASE_URL + div.find("a",{"title":"view author"}).get("href")
+        try:
+            quote = div.find("a",{"title":"view quote"}).text
+        except:
+            quote =""
+        try:
+            quotelink =  BASE_URL + div.find("a",{"title":"view quote"}).get("href")
+        except:
+            quotelink = ""
+        try:
+            author =  "By " + div.find("a",{"title":"view author"}).text
+        except:
+            author = ""
+        try:
+            authorlink =  BASE_URL + div.find("a",{"title":"view author"}).get("href")
+        except:
+            authorlink = ""
 
-        tagsElement = div.findAll("a",{"class":"qkw-btn btn btn-xs oncl_list_kc"})
+        try:
+            tagsElement = div.findAll("a",{"class":"qkw-btn btn btn-xs oncl_list_kc"})
+        except:
+            tagsElement = []
         tags = []
         for tag in tagsElement:
             tags += tag
