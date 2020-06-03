@@ -1,6 +1,6 @@
 {
-  "name": "Brainy Quote API",
-  "description": "Unofficial API of Brainy Quote",
+  "name": "Brainy Quotes API",
+  "description": "Unofficial API of Brainy Quotes",
   "keywords": [
     "flask",
     "python",
