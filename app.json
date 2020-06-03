@@ -1,11 +1,11 @@
 {
-  "name": "Brainy Quotes API",
-  "description": "Unofficial API of Brainy Quotes",
+  "name": "Brainy Quote API",
+  "description": "Unofficial API of Brainy Quote",
   "keywords": [
     "flask",
     "python",
     "quotes",
-    "brainyquotes"
+    "brainyquote"
   ],
   "success_url": "https://t.me/alphaprojects"
 }
