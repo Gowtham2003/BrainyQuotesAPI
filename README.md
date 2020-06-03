@@ -28,7 +28,45 @@ https://brainyquotes.herokuapp.com/news?category={category_name}
 Example - https://brainyquotes.herokuapp.com/news?category=nature
 
 ---
+## Response Format 
 
+Example Of Brainy Quote API Response Below 
+
+--- 
+
+```JSON
+
+"data": [
+    {
+      "author": "By Frederick Douglass", 
+      "authorlink": "https://www.brainyquote.com//authors/frederick-douglass-quotes", 
+      "quote": "It is not light that we need, but fire; it is not the gentle shower, but thunder. We need the storm, the whirlwind, and the earthquake.", 
+      "quotelink": "https://www.brainyquote.com//quotes/frederick_douglass_134570?src=t_nature", 
+      "tags": [
+        "Light", 
+        "Fire", 
+        "Storm", 
+        "Thunder"
+      ]
+    }, 
+    {
+      "author": "By Henry David Thoreau", 
+      "authorlink": "https://www.brainyquote.com//authors/henry-david-thoreau-quotes", 
+      "quote": "Nature will bear the closest inspection. She invites us to lay our eye level with her smallest leaf, and take an insect view of its plain.", 
+      "quotelink": "https://www.brainyquote.com//quotes/henry_david_thoreau_106919?src=t_nature", 
+      "tags": [
+        "Leaf", 
+        "View", 
+        "Will", 
+        "Insect"
+      ]
+    }
+    ],
+     "success": true
+}
+
+
+```
 ---
 ## Setup
 
