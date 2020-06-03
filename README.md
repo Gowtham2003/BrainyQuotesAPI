@@ -1,6 +1,5 @@
 # BrainyQuotesAPI
 
-Unofficial Brainy Quotes API using Python , Flask , BeautifulSoup4
 
 ---
 
