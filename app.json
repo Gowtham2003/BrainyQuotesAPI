@@ -1,11 +1,11 @@
 {
-  "name": "Daily Hunts News API",
-  "description": "Unofficial API of Daily Hunt News",
+  "name": "Brainy Quotes API",
+  "description": "Unofficial API of Brainy Quotes",
   "keywords": [
     "flask",
     "python",
-    "news",
-    "dailyhunt"
+    "quote",
+    "brainyquote"
   ],
   "success_url": "https://t.me/alphaprojects"
 }
