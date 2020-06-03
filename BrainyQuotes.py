@@ -40,6 +40,8 @@ def getQuotes(query):
 
         quotesDictionary["data"].append(QuoteContent)
 
+    return quotesDictionary
+
 #    print(quotesDictionary)
 
 #getQuotes("nature")

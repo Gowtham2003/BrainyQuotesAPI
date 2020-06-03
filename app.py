@@ -2,7 +2,7 @@
 # Coded Using Visual Studio Code
 
 from flask import Flask, request, jsonify
-from quotes import getQuotes
+from BrainyQuotes import getQuotes
 from flask_cors import CORS
 
 app = Flask(__name__)
