@@ -10,7 +10,7 @@ An Unofficial Brainy Quotes API Which Fetches Quotes from Brainy Quotes .
 
 ## Support My Project If You Like 
 
-[![GitHub stars](https://img.shields.io/github/stars/gowtham2003/BrainyQuotesAPI.svg?style=social&label=Star)](https://github.com/gowtham2003/BrainyQuotesAPI)
+[![GitHub stars](https://img.shields.io/github/stars/gowtham2003/brainyquotesapi.svg?style=social&label=Star)](https://github.com/gowtham2003/brainyquotesapi)
 
 
 ![GitHub followers](https://img.shields.io/github/followers/gowtham2003.svg?style=social&label=Follow)
