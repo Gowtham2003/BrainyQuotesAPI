@@ -1,0 +1,12 @@
+{
+  "name": "Brainy Quotes API",
+  "description": "Unofficial API of Brainy Quotes",
+  "keywords": [
+    "flask",
+    "python",
+    "quotes",
+    "brainyquotes"
+  ],
+  "success_url": "https://t.me/alphaprojects"
+}
+© 2020 GitHub, Inc.
