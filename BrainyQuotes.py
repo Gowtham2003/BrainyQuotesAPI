@@ -63,4 +63,4 @@ def getQuotes(query):
 
 #    print(quotesDictionary)
 
-#getQuotes("nature")
+
