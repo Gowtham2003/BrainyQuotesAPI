@@ -4,45 +4,48 @@
 import requests
 from bs4 import BeautifulSoup as bs
 
-quotesDictionary = {
-    "success":True,
-    "data":[]
-}
 
 def getQuotes(query):
     BASE_URL = "https://www.brainyquote.com/"
 
     url = f"https://www.brainyquote.com/topics/{query}-quotes"
-    
+
+    quotesDictionary = {
+        "success": True,
+        "data": []
+    }
+
     try:
-        soup = bs(requests.get(url).content,"lxml")
+        soup = bs(requests.get(url).content, "lxml")
     except:
         quotesDictionary["success"] = False
         return quotesDictionary
 
-    
-    divs = soup.findAll("div",{"class":"qll-bg"})
+    divs = soup.findAll("div", {"class": "qll-bg"})
 
     for div in divs:
         try:
-            quote = div.find("a",{"title":"view quote"}).text
+            quote = div.find("a", {"title": "view quote"}).text
         except:
-            quote =""
+            quote = ""
         try:
-            quotelink =  BASE_URL + div.find("a",{"title":"view quote"}).get("href")
+            quotelink = BASE_URL + \
+                div.find("a", {"title": "view quote"}).get("href")
         except:
             quotelink = ""
         try:
-            author =  "By " + div.find("a",{"title":"view author"}).text
+            author = "By " + div.find("a", {"title": "view author"}).text
         except:
             author = ""
         try:
-            authorlink =  BASE_URL + div.find("a",{"title":"view author"}).get("href")
+            authorlink = BASE_URL + \
+                div.find("a", {"title": "view author"}).get("href")
         except:
             authorlink = ""
 
         try:
-            tagsElement = div.findAll("a",{"class":"qkw-btn btn btn-xs oncl_list_kc"})
+            tagsElement = div.findAll(
+                "a", {"class": "qkw-btn btn btn-xs oncl_list_kc"})
         except:
             tagsElement = []
         tags = []
@@ -50,11 +53,11 @@ def getQuotes(query):
             tags += tag
 
         QuoteContent = {
-            "quote":quote,
-            "quotelink":quotelink,
-            "author":author,
-            "authorlink":authorlink,
-            "tags":tags
+            "quote": quote,
+            "quotelink": quotelink,
+            "author": author,
+            "authorlink": authorlink,
+            "tags": tags
         }
 
         quotesDictionary["data"].append(QuoteContent)
@@ -62,5 +65,3 @@ def getQuotes(query):
     return quotesDictionary
 
 #    print(quotesDictionary)
-
-
