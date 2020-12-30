@@ -4,6 +4,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 
+
 def getQuotes(query):
     BASE_URL = "https://www.brainyquote.com/"
 
@@ -16,26 +17,17 @@ def getQuotes(query):
 
     try:
         soup = bs(requests.get(url).content, "lxml")
-        
     except:
         quotesDictionary["success"] = False
         return quotesDictionary
 
-    divs = soup.findAll("div",class_="m-brick grid-item boxy bqQt r-width")
+    divs = soup.findAll("div", {"class": "qll-bg"})
 
     for div in divs:
         try:
-            try:
-                image = BASE_URL +  div.find("img", {"class": "bqphtgrid"}).get("data-img-url")
-            except:
-                image = BASE_URL +  div.find("img", {"class": "bqphtgrid"}).get("src")
-        except:
-            image = ""
-        try:
-            quote = div.find("img", {"class": "bqphtgrid"}).get("alt")
+            quote = div.find("a", {"title": "view quote"}).text
         except:
             quote = ""
-            
         try:
             quotelink = BASE_URL + \
                 div.find("a", {"title": "view quote"}).get("href")
@@ -53,7 +45,7 @@ def getQuotes(query):
 
         try:
             tagsElement = div.findAll(
-                "a", {"class": "qkw-btn btn btn-xs oncl_klc"})
+                "a", {"class": "qkw-btn btn btn-xs oncl_list_kc"})
         except:
             tagsElement = []
         tags = []
@@ -65,10 +57,11 @@ def getQuotes(query):
             "quotelink": quotelink,
             "author": author,
             "authorlink": authorlink,
-            "tags": tags,
-            "quoteImage":image
+            "tags": tags
         }
 
         quotesDictionary["data"].append(QuoteContent)
-        
+
     return quotesDictionary
+
+#    print(quotesDictionary)
