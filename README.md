@@ -22,9 +22,9 @@ An Unofficial Brainy Quotes API Which Fetches Quotes from Brainy Quotes .
 
 Make a get request specifying the category of quote you want
 ```
-https://brainyquotes.herokuapp.com/quotes?category={category_name}
+https://brainyquotes.vercel.app/quotes?category={category_name}
 ```
-Example - https://brainyquotes.herokuapp.com/quotes?category=nature
+Example - https://brainyquotes.vercel.app/quotes?category=nature
 
 ---
 ## Response Format 
