@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup as bs
 
 def getQuotes(query):
     BASE_URL = "https://www.brainyquote.com/"
-
+    query = query.strip().replace(" ","-")
     url = f"https://www.brainyquote.com/topics/{query}-quotes"
 
     quotesDictionary = {
