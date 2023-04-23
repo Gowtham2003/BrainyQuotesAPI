@@ -21,7 +21,7 @@ def getQuotes(query):
         quotesDictionary["success"] = False
         return quotesDictionary
 
-    divs = soup.findAll("div",class_="m-brick grid-item boxy bqQt r-width")
+    divs = soup.findAll("div",class_="grid-item qb clearfix bqQt")
 
     for div in divs:
         try:
